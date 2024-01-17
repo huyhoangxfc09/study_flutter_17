@@ -1,0 +1,16 @@
+- Kiểu số: num, int, double.
+- Kiểu chuỗi: String.
+- Kiểu logic: bool.
+
+* Khai báo: <dataType> <nameVariable> = <value>;
+* Khai báo null: <dataType>? <nameVariable>;
+
+* Sự khác nhau giữa var và dynamic
+    - var:
+        + Kiểu biến tự động được xác định khi biên dịch: Khi sử dụng var Dart sẽ tự động  xác định kiểu dữ liệu của biến dựa trên giá trị mà bạn gán cho nó khi khởi tạo.
+        + Không thể thay đổi kiểu sau khi khai báo: MỘt khi bạn đã gán giá trị cho biến với var. bạn không thể thay đổi kiểu biến đó trong quá trình chạy chương trình.
+        + Nếu khởi tạo giá trị thì không thể thay đổi kiểu dữ liệu, không khởi tạo giá trị thì mới thay đổi được kiểu dữ liệu.
+    - dynamic:
+        + Kiểu biến có thể thay đổi: Khi sử dung dynamic, bạn có thể gán bất kỳ giá trị nào cho biến và thậm chí có thể thay đổi kiểu của biến đó sau khi giá trị đã được khởi tạo.
+        + Kiểm tra kiểu tại thời điểm chạy (runtime): Kiểu của biến được xác định tại thời điểm chạy, điều này có nghĩa là bạn có thể thực hiện các thao tác như kiểm tra kiểu và gọi
+        các phương thức không được khai báo trước.

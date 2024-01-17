@@ -1,0 +1,6 @@
+- Mỗi Widget đều có 1 BuildContext đại diện cho vị trí của chính Widget đó trên widget tree.
+- Trong Flutter, BuildContext là một đối tượng đại diện cho ngữ cảnh xây dựng của một widget.
+Nó cung cấp thông tin về cây widget hiện tại và các thuộc tính của widget đang được xây dựng.
+- Bạn có thể truyền BuildContext từ widget cha đến widget con thông qua các tham số của constructor hoặc thông qua BuildContext của widget hiện tại.
+Điều này cho phép bạn truy cập và sử dụng các thông tin và phương thức của widget cha trong widget con.
+

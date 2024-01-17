@@ -1,0 +1,124 @@
+- StatefulWidget là một lớp trong Flutter được sử dụng để xây dựng các widget có thể thay đổi trạng thái.
+Điều này có nghĩa là một widget StatefulWidget có thể thay đổi trạng thái của nó trong quá trình chạy.
+StatefulWidget được xây dựng bằng cách kế thừa từ lớp StatefulWidget và ghi đè phương thức createState() để tạo ra một đối tượng State tương ứng.
+- StatefulWidget cũng chỉ là 1 class mà extends class StatefulWidget.
+- Ex: import 'package:flutter/material.dart';
+
+      void main() {
+        runApp(
+          MaterialApp(
+            home: MyHomePage(isLoading: false, counter: 1),
+          ),
+        );
+      }
+
+      class MyHomePage extends StatefulWidget {
+        final bool isLoading;
+        final int counter;
+
+        const MyHomePage({
+          required this.isLoading,
+          required this.counter,
+        });
+
+        @override
+        State<MyHomePage> createState() {
+          return MyHomePageState();
+        }
+      }
+
+      class MyHomePageState extends State<MyHomePage> {
+        @override
+        Widget build(BuildContext context) {
+          return Scaffold(
+            body: Center(
+              child: CounterWidget(
+                isLoading: widget.isLoading,
+                counter: widget.counter,
+              ),
+            ),
+          );
+        }
+      }
+
+- Bất kỳ class nào extends class State, đều sẽ có 1 biến tên là widget.
+- Biến này chính là instance của class MyHomePage.
+Nó giúp ta get được giá trị của 2 property isLoading và counter của object MyHomePage như thế này: widget.isLoading, widget.counter
+
+* setState method
+- Phương thức setState() là một phương thức quan trọng trong Flutter được sử dụng để thông báo cho framework rằng trạng thái của một widget StatefulWidget đã thay đổi và cần vẽ lại giao diện.
+Khi bạn gọi phương thức setState(), Flutter sẽ gọi lại phương thức build() của widget đó để xây dựng lại giao diện dựa trên trạng thái mới.
+Điều này cho phép bạn cập nhật và hiển thị các thay đổi trạng thái của widget trong giao diện người dùng.
+
+- initState() là một phương thức trong Flutter được sử dụng trong lớp State của một widget StatefulWidget.
+Phương thức này được gọi một lần duy nhất khi widget được tạo ra và được gắn vào cây widget.
+Trong phương thức initState(), bạn có thể thực hiện các công việc khởi tạo ban đầu cho widget và thiết lập trạng thái ban đầu.
+Điều này thường bao gồm việc khởi tạo các biến, thiết lập kết nối với dữ liệu hoặc các tác vụ khác cần được thực hiện trước khi giao diện được xây dựng.
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyHomePage(isLoading: false, counter: 0),
+    ),
+  );
+}
+
+class MyHomePage extends StatefulWidget {
+  final bool isLoading;
+  final int counter;
+
+  const MyHomePage({
+    required this.isLoading,
+    required this.counter,
+  });
+
+  @override
+  State<MyHomePage> createState() {
+    return MyHomePageState();
+  }
+}
+
+class MyHomePageState extends State<MyHomePage> {
+  late bool _isLoading;
+  late int _counter;
+
+  @override
+  void initState() {
+    super.initState();
+    _isLoading = widget.isLoading;
+    _counter = widget.counter;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    print('rebuild MyHomePage');
+    return Scaffold(
+      body: Center(
+        child: CounterWidget(
+          isLoading: _isLoading,
+          counter: _counter,
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: onFloatingButtonClicked,
+      ),
+    );
+  }
+
+  void onFloatingButtonClicked() {
+    print('Button clicked!. Call setState method');
+    setState(() {
+      _counter++;
+      if (_counter % 2 == 0) {
+        _isLoading = false;
+      } else {
+        _isLoading = true;
+      }
+    });
+  }
+}
+
+- Dù cho Widget đó kích thước lớn hay bé, miễn là nó thể thay đổi UI khi user tương tác với nó (tap/press/vuốt) thì nó là StatefulWidget.
+

@@ -1,0 +1,29 @@
+- Enum là một cáu trúc dữ liệu giúp định nghĩa một tập hợp các giá trị hằng số. Mỗi giá trị trong enum là một hằng số và được liệt kê theo thứ tự.
+Ví dụ:
+        enum Weekday {
+          monday,
+          tuesday,
+          wednesday,
+          thursday,
+          friday,
+          saturday,
+          sunday,
+        }
+
+        void main() {
+          Weekday today = Weekday.saturday;
+
+          switch (today) {
+            case Weekday.monday:
+            case Weekday.tuesday:
+            case Weekday.wednesday:
+            case Weekday.thursday:
+            case Weekday.friday:
+              print("It's a weekday.");
+              break;
+            case Weekday.saturday:
+            case Weekday.sunday:
+              print("It's the weekend!");
+              break;
+          }
+        }

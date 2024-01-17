@@ -1,0 +1,37 @@
+- Widget chỉ đơn giản là những Dart class.
+- StatelessWidget là một lớp trong Flutter được sử dụng để xây dựng các widget không thay đổi trạng thái.
+Điều này có nghĩa là một khi một widget Stateless được tạo ra, nó không thể thay đổi trạng thái của nó.
+Stateless widget được xây dựng bằng cách kế thừa từ lớp StatelessWidget và ghi đè phương thức build() để xây dựng giao diện của widget.
+- StatelessWidget là Widget sẽ extend StatelessWidget class.
+
+- Ex:import 'package:flutter/material.dart';
+
+     void main() {
+       runApp(
+         MaterialApp(
+           home: Scaffold(
+             body: Center(
+               child: CounterWidget(isLoading: false, counter: 1),
+             ),
+           ),
+         ),
+       );
+     }
+
+     class CounterWidget extends StatelessWidget {
+       final bool isLoading;
+       final int counter;
+
+       const CounterWidget({
+         required this.isLoading,
+         required this.counter,
+       });
+
+       @override
+       Widget build(BuildContext context) {
+         return isLoading ? CircularProgressIndicator() : Text('$counter');
+       }
+     }
+- State chỉ là những data. Những data này được truyền vào hàm build.
+- Hàm build giống như một công thức/hàm số nhận State như một input để cho ra output là UI tương ứng hiển thị trên màn hình: UI = build(state)
+- Hàm build này được gọi khi chúng ta khởi tạo 1 object StatelessWidget

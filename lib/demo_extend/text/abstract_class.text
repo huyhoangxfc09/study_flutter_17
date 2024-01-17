@@ -1,0 +1,22 @@
+1.Khái niệm
+- Trong dart, 1 abstract class là 1 lớp không thể tạo trực tiếp đối tượng từ lớp đó.
+- Mục đích chính của abstract class là để được kế thừa và được sử dụng như bản thiết kế cho các lớp con.
+
+
+Trong Dart, các tính chất của abstract class bao gồm:
+
+1. Abstract class không thể được khởi tạo trực tiếp. Nó chỉ có thể được sử dụng như một lớp cơ sở cho các lớp con.
+
+2. Abstract class có thể chứa các phương thức abstract (không có thân hàm) và các phương thức có thân hàm.
+
+
+
+
+4. Abstract class có thể có các thuộc tính và các phương thức thông thường.
+
+5. Một lớp có thể kế thừa từ nhiều abstract class, nhưng chỉ có thể kế thừa từ một lớp cụ thể.
+
+6. Abstract class không thể được khai báo là final.
+
+7. Abstract class có thể được sử dụng để tạo ra các hợp đồng (contracts) cho các lớp con, đảm bảo rằng các lớp con phải triển khai
+các phương thức đã được định nghĩa trong abstract class.

@@ -1,0 +1,8 @@
+Trong Dart, interface không phải là một khái niệm riêng biệt như trong một số ngôn ngữ khác như Java hoặc C#.
+Thay vào đó, Dart sử dụng cơ chế "implicit interfaces" (giao diện ngầm định) để định nghĩa các hợp đồng (contracts) cho các lớp.
+
+Trong Dart, mọi lớp đều được coi là một giao diện ngầm định và các lớp khác có thể kế thừa từ lớp đó.
+Điều này có nghĩa là một lớp có thể được sử dụng như một giao diện và các lớp khác có thể triển khai lại các phương thức của lớp đó.
+
+Dart không hỗ trợ đa kế thừa, vì vậy một lớp chỉ có thể triển khai lại các phương thức của một lớp khác.
+Tuy nhiên, một lớp có thể triển khai nhiều giao diện ngầm định bằng cách sử dụng từ khóa implements.

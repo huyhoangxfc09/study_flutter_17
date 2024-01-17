@@ -1,0 +1,4 @@
+- Widget chỉ là một bản thiết kế cho các mảnh UI hiển thị trên màn hình, Element là đại diện cho cái mảnh UI đó ở một vị trí nào đó trên cây
+và RenderObject đóng góp vào tô vẽ, căn chỉnh cho cái mảnh UI đó.
+- Key là một định danh dùng để xác định danh tính cho các Widget, Element
+- Sử dụng Key để bảo tồn, để giữ lại cái State khi các Widget bị di chuyển tùm lum chỗ quanh cái Widget Tree.

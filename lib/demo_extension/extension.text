@@ -1,0 +1,12 @@
+Trong Dart, extension là một tính năng mới được giới thiệu từ phiên bản Dart 2.6.
+Extension cho phép bạn thêm các phương thức và thuộc tính mới cho một lớp đã tồn tại mà không cần thay đổi mã nguồn của lớp đó. Các tính chất của extension trong Dart bao gồm:
+
+1. Extension cho phép bạn mở rộng (extend) các lớp đã tồn tại mà không cần thay đổi mã nguồn của lớp đó.
+
+2. Bạn có thể thêm các phương thức, thuộc tính và getter/setter mới cho lớp đã tồn tại bằng cách sử dụng từ khóa extension.
+
+3. Extension không thay đổi cấu trúc kế thừa của lớp đã tồn tại. Nó chỉ mở rộng chức năng của lớp đó.
+
+4. Extension có thể được sử dụng để thêm các phương thức mở rộng (extension methods) cho các lớp có sẵn trong Dart, chẳng hạn như String, List, int, v.v.
+
+5. Các phương thức mở rộng trong extension có thể được gọi như các phương thức thông thường trên đối tượng của lớp đã tồn tại.

@@ -1,0 +1,38 @@
+- InheritedWidget là một nơi lưu trữ data và cung cấp data cho widget con trong widget tree.
+Tất cả widget con của InheritedWidget đều có thể truy cập vào InheritedWidget để lấy data.
+
+- Để sử dụng InheritedWidget, bạn cần thực hiện các bước sau:
+1. Tạo một lớp con kế thừa từ InheritedWidget và định nghĩa dữ liệu bạn muốn chia sẻ.
+            class MyInheritedWidget extends InheritedWidget {
+              final int counter;
+              final bool isLoading;
+              final Widget child;
+
+              MyInheritedWidget({
+                 required this.isLoading,
+                 required this.counter,
+                 required this.child,
+               }) : super(child: child);
+
+
+              @override
+              bool updateShouldNotify(MyInheritedWidget oldWidget) {
+                 return isLoading != oldWidget.isLoading || counter != oldWidget.counter;
+              }
+
+            }
+
+2. Bọc widget cha của cây widget với MyInheritedWidget và cung cấp dữ liệu cho nó:
+            Widget build(BuildContext context) {
+              return MyInheritedWidget(
+                data: 'Hello, World!',
+                child: // Widget con của bạn
+              );
+            }
+
+3. Trong các widget con, sử dụng BuildContext để truy cập dữ liệu từ InheritedWidget:
+            Widget build(BuildContext context) {
+              final myData = MyInheritedWidget.of(context)?.data;
+              // Sử dụng dữ liệu để tạo giao diện người dùng
+              return Text(myData ?? '');
+            }

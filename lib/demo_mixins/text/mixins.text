@@ -1,0 +1,29 @@
+1. Là một cơ chế để chia sẻ code (phương thức) giữa các lớp với nhau mà không cần thông qua kế thừa
+2. Để sử dụng mixins trong Dart, bạn có thể tạo một lớp mixin bằng cách sử dụng từ khóa mixin và định nghĩa các phương thức, thuộc tính hoặc getter/setter cần chia sẻ.
+Sau đó, bạn có thể áp dụng mixin này vào một lớp bằng cách sử dụng từ khóa with.
+
+Trong Dart, mixins là một tính năng mạnh mẽ cho phép tái sử dụng mã giữa các lớp mà không cần kế thừa từ một lớp cụ thể. Các tính chất của mixins trong Dart bao gồm:
+
+1. Mixins cho phép tái sử dụng mã giữa các lớp mà không cần tạo một cấu trúc kế thừa phức tạp.
+
+2. Một lớp có thể sử dụng nhiều mixins bằng cách sử dụng từ khóa with và liệt kê các mixins sau đó.
+
+3. Mixins có thể chứa các phương thức, thuộc tính và getter/setter.
+
+4. Mixins không thể được khởi tạo trực tiếp và không thể có constructor.
+
+5. Mixins có thể được sử dụng để thêm các tính năng hoặc hành vi cho một lớp mà không làm thay đổi cấu trúc kế thừa hiện có.
+
+6. Mixins có thể được sử dụng để triển khai các hợp đồng (contracts) cho các lớp, đảm bảo rằng các lớp phải triển khai các phương thức đã được định nghĩa trong mixins.
+
+
+* Có thể giới hạn mixin bằng cách thêm on
+ex: mixin class Chess on Games {
+        void log play1();
+    }
+
+    class Student extends Games with Chess, Football {
+
+    }
+    - Student có thể gọi được play1() bằng việc kế thừa Games. Lớp nào muốn goi mixin Chess thì phải kế thừa Games nếu không sẽ báo lỗi
+    ex class Student with Chess{} //Error: Không kế thừa Games
