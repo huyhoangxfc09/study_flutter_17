@@ -1,0 +1,10 @@
+* List là một cấu trúc dữ liệu mảng có thứ tự, linh hoạt và được sử dụng để lưu trữ một tập hợp các phần tử.
+* List có thể chứa các phần tử cùng kiểu hoặc kiểu khác nhau.
+
+1. Khai báo list.
+- Sử dụng từ khóa List và danh sách các phần tử:
+    List<int> numbers = [1, 2, 3, 4, 5];
+- Tạo danh sách rỗng:
+    List<String> fruits = [];
+    // hoặc
+    List<String> fruits = List<String>();

@@ -1,0 +1,19 @@
+- Trong dart Interable là một giao diện định nghĩa một tập hợp các phần tử có thể được lặp qua. Nó là một phần của thư viện chuẩn của Dart và được triển khai bời nhiều cấu trúc dữ
+liệu khác nhau như: List, Set, Queue, IterableMixin và Range.
+- Sử dụng Iterable giúp đơn giản hóa việc làm việc với các cấu trúc dữ liệu và cung cấp các phương thức tiện ích để lặp qua các phần tử.
+        List<int> numbers = [1, 2, 3, 4, 5];
+        numbers.forEach((number) => print(number));
+
+        Iterable<T> map<T>(T f(E element))
+
+        List<int> numbers = [1, 2, 3, 4, 5];
+        var squaredNumbers = numbers.map((number) => number * number);
+
+        Iterable<T> where(bool test(T element))
+
+        List<int> numbers = [1, 2, 3, 4, 5];
+        var evenNumbers = numbers.where((number) => number % 2 == 0);
+
+
+        List<int> numbers = [1, 2, 3, 4, 5];
+        List<int> numberList = numbers.toList();

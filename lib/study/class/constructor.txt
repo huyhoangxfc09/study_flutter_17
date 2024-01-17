@@ -1,0 +1,51 @@
+* Trong Dart, constructor là một hàm đặc biệt được sử dụng để khởi tạo một đối tượng của một lớp. Constructors định nghĩa cách một đối tượng được khởi tạo, bao gồm cách
+chuyển tham số và giá trị cho các thuộc tính của đối tượng. Có hai loại constructor chính trong Dart: named constructor và default constructor.
+
+* Dưới đây là một số ví dụ về cách sử dụng constructor trong Dart:
+    1. Default Constructor:
+        class Person {
+          String name;
+          int age;
+
+          // Default constructor
+          Person(this.name, this.age);
+
+          void introduceYourself() {
+            print('Hello, my name is $name and I am $age years old.');
+          }
+        }
+
+        void main() {
+          // Sử dụng default constructor
+          var person = Person('Alice', 25);
+          person.introduceYourself(); // Output: Hello, my name is Alice and I am 25 years old.
+        }
+    2. Named Constructor:
+        class Rectangle {
+          double width, height;
+
+          // Default constructor
+          Rectangle(this.width, this.height);
+
+          // Named constructor
+          Rectangle.square(double side) : width = side, height = side;
+
+          double calculateArea() {
+            return width * height;
+          }
+        }
+
+        void main() {
+          // Sử dụng default constructor
+          var rectangle1 = Rectangle(4, 6);
+          print('Area: ${rectangle1.calculateArea()}'); // Output: Area: 24.0
+
+          // Sử dụng named constructor
+          var square = Rectangle.square(5);
+          print('Area: ${square.calculateArea()}'); // Output: Area: 25.0
+        }
+Trong ví dụ trên, Rectangle.square(double side) : width = side, height = side; là một named constructor được gọi là square. Nó chấp nhận một tham số (side) và sử dụng nó để khởi
+tạo width và height sao cho hình chữ nhật trở thành một hình vuông.
+
+Dart cũng hỗ trợ việc đặt tên cho các tham số trong constructor, sử dụng {} để tạo optional named parameters. Cũng có thể sử dụng cú pháp const để tạo các đối tượng không thay đổi
+(immutable).

@@ -1,0 +1,9 @@
+* Trong dart, Set là một cấu trúc dữ liệu không giữ thứ tự, không chứa các phần tử trùng lặp. Nó giống như một tập hợp toán học.
+
+* Khai báo Set
+    1. SỬ dụng từ khóa Set và danh sách các phần tử:
+        Set<int> numbers = {1, 2, 3, 4, 5};
+    2. Tạo Set rỗng:
+        Set<String> fruits = {};
+        // hoặc
+        Set<String> fruits = Set<String>();

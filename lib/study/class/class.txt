@@ -1,0 +1,37 @@
+* Trong Dart, class là một cấu trúc dữ liệu và một khối mã, nó được sử dụng để đóng gói dữ liệu và các hàm thành một thực thể độc lập.
+Đối tượng của một lớp được tạo bằng cách sử dụng từ khóa new hoặc chỉ gọi trực tiếp tên lớp nếu có hàm khởi tạo (constructor) không tham số.
+* Dưới đây là một ví dụ cơ bản về cách khai báo và sử dụng class trong Dart:
+    // Khai báo class
+    class Person {
+      // Thuộc tính (dữ liệu)
+      String name;
+      int age;
+
+      // Constructor (hàm khởi tạo)
+      Person(this.name, this.age);
+
+      // Phương thức (hàm)
+      void introduceYourself() {
+        print('Hello, my name is $name and I am $age years old.');
+      }
+    }
+
+    void main() {
+      // Tạo đối tượng từ lớp Person
+      var person1 = Person('Alice', 25);
+      var person2 = Person('Bob', 30);
+
+      // Truy cập thuộc tính và gọi phương thức
+      print(person1.name); // Output: Alice
+      print(person2.age);  // Output: 30
+
+      person1.introduceYourself(); // Output: Hello, my name is Alice and I am 25 years old.
+      person2.introduceYourself(); // Output: Hello, my name is Bob and I am 30 years old.
+    }
+*Trong ví dụ trên:
+    - Person là tên của lớp.
+    - name và age là thuộc tính của lớp Person.
+    - Person(this.name, this.age) là một hàm khởi tạo (constructor) chấp nhận tham số và gán giá trị cho thuộc tính.
+    - introduceYourself là một phương thức của lớp Person.
+    - person1 và person2 là hai đối tượng của lớp Person được tạo bằng cách sử dụng hàm khởi tạo.
+*Dart cung cấp nhiều tính năng khác nhau cho class, bao gồm cả kế thừa, đóng gói, đa hình và các khái niệm khác giúp bạn tổ chức mã nguồn một cách hiệu quả.

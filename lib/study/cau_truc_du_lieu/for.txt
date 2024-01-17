@@ -1,0 +1,36 @@
+1. for-in : Dùng để lặp qua từng phần tử trong 1 Interable
+        List<int> numbers = [1, 2, 3, 4, 5];
+
+        for (int number in numbers) {
+          print(number);
+        }
+2. for i: Dùng để lặp qua một phạm vi cụ thể của các giá trị nguyên
+        for (int i = 0; i < 5; i++) {
+          print(i);
+        }
+3. for (var item in collection): Tương tự như for-in nhưng không giới hạn kiểu item.
+        Set<String> fruits = {'apple', 'orange', 'banana'};
+
+        for (var fruit in fruits) {
+          print(fruit);
+        }
+4. forEach: Dùng để thực hiện 1 hàm cho mỗi phần tử trong Interable
+        List<int> numbers = [1, 2, 3, 4, 5];
+
+        numbers.forEach((number) {
+          print(number);
+        });
+5. while: Dùng để thực hiện một chuỗi lệnh trong khi 1 điều kiện là đúng.
+        int count = 0;
+
+        while (count < 5) {
+          print(count);
+          count++;
+        }
+6. do-while: Tương tự như while nhưng kiểm tra điều kiện sau khi thực hiện một chuỗi lệnh.
+        int count = 0;
+
+        do {
+          print(count);
+          count++;
+        } while (count < 5);

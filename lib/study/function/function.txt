@@ -1,0 +1,63 @@
+* Hàm là một nhóm các câu lệnh nhằm thực hiện một tác vụ nhất định.
+* Dart hỗ trợ nhiều loại hàm, bao gồm cả hàm không có giá trị trả về và hàm có giá trị trả về.
+    1. Hàm không có giá trị trả về (void):
+        void printHello() {
+          print('Hello, World!');
+        }
+
+        // Gọi hàm
+        printHello();
+    2. Hàm có giá trị trả về:
+        int add(int a, int b) {
+          return a + b;
+        }
+
+        // Gọi hàm
+        int result = add(3, 5);
+        print(result); // Output: 8
+    3. Hàm có tham số:
+        void greet(String name) {
+          print('Hello, $name!');
+        }
+
+        // Gọi hàm
+        greet('Alice'); // Output: Hello, Alice!
+    4. Hàm có tham số mặc định:
+        void greet(String name, {String greeting = 'Hello'}) {
+          print('$greeting, $name!');
+        }
+
+        // Gọi hàm
+        greet('Bob');              // Output: Hello, Bob!
+        greet('Charlie', greeting: 'Hi'); // Output: Hi, Charlie!
+    5. Hàm có tham số hàm (Hàm nhóm):
+        void processNumbers(List<int> numbers, Function(int) process) {
+          for (var number in numbers) {
+            process(number);
+          }
+        }
+
+        // Gọi hàm
+        processNumbers([1, 2, 3, 4], (number) {
+          print('Squared: ${number * number}');
+        });
+    6. Hàm anonymous (Hàm không tên):
+        var multiply = (int a, int b) => a * b;
+
+        // Gọi hàm
+        var result = multiply(4, 6);
+        print(result); // Output: 24
+    7. Hàm generative (constructor):
+        class Person {
+          String name;
+
+          Person(this.name);
+
+          void sayHello() {
+            print('Hello, $name!');
+          }
+        }
+
+        // Sử dụng constructor
+        var person = Person('Alice');
+        person.sayHello(); // Output: Hello, Alice!

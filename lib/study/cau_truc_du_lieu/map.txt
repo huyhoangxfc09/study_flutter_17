@@ -1,0 +1,44 @@
+* Trong dart, Map là một cấu trúc dữ liệu được sử dụng để lưu trữ các cặp key-value.
+Mỗi key là duy nhất và liên kết với một giá trị cụ thể.
+
+* Khai báo map
+    1. Sử dụng từ khóa map và cặp key-value
+        Map<String, int> scores = {'Alice': 90, 'Bob': 80, 'Charlie': 95};
+    2. Tạo map rỗng:
+        Map<String, int> scores = {};
+        // hoặc
+        Map<String, int> scores = Map<String, int>();
+* Truy cập và thay đổi giá trị:
+        Map<String, int> scores = {'Alice': 90, 'Bob': 80, 'Charlie': 95};
+
+        // Truy cập giá trị theo key
+        int aliceScore = scores['Alice'];
+        print(aliceScore); // Output: 90
+
+        // Thay đổi giá trị theo key
+        scores['Bob'] = 85;
+        print(scores); // Output: {'Alice': 90, 'Bob': 85, 'Charlie': 95}
+* Thêm và xóa cặp key-value:
+        Map<String, int> scores = {'Alice': 90, 'Bob': 80, 'Charlie': 95};
+
+        // Thêm một cặp key-value mới
+        scores['David'] = 88;
+        print(scores); // Output: {'Alice': 90, 'Bob': 80, 'Charlie': 95, 'David': 88}
+
+        // Xóa một cặp key-value theo key
+        scores.remove('Bob');
+        print(scores); // Output: {'Alice': 90, 'Charlie': 95}
+* Kiểm tra map:
+        Map<String, int> scores = {'Alice': 90, 'Bob': 80, 'Charlie': 95};
+
+        // Kiểm tra xem Map có rỗng không
+        bool isEmpty = scores.isEmpty;
+        print(isEmpty); // Output: false
+
+        // Kiểm tra độ dài của Map
+        int length = scores.length;
+        print(length); // Output: 3
+
+        // Kiểm tra xem một key có tồn tại trong Map hay không
+        bool containsBob = scores.containsKey('Bob');
+        print(containsBob); // Output: true
